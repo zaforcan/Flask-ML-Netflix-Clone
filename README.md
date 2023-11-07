@@ -19,9 +19,17 @@ It's a very simple system for now. I did this to try how I could combine the htm
 <li>Python 3.10.7</li>
 <li>Python modules from requirements.txt  (pip install -r requirements.txt.)</li>
 
-I use 
-flask library for backend, 
-pandas,scikit-learn for dataset analyse and machine learning model 
+<br>
+I use flask library for backend
+<p>pandas,scikit-learn for data analyse and machine learning model </p>
+and pickle for deploying model 
+
+(some pickle files may be large for uploading to github.) 
+<br>
+to solve it 
+https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage
+
+
 
 
 
