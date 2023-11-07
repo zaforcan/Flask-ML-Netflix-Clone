@@ -15,7 +15,7 @@ It's a very simple system for now. I did this to try how I could combine the htm
 
 <h2>App Install</h2>
 
-<h1>Prerequisites</h1>
+<h3>Prerequisites</h3>
 <li>Python 3.10.7</li>
 <li>Python modules from requirements.txt  (pip install -r requirements.txt.)</li>
 
