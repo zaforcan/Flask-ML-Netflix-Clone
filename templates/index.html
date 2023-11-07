@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/main.js" type="text/javascript"></script>
+
+
+
+</head>
+<body>
+<div class="header">
+
+    <nav class="navbar" >
+        <div class="logo">
+            <img src="/static/upload/logo.png" alt="Netflix Logo">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">{{ home }}</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">New & Popular</a></li>
+            <li><a href="#">My List</a></li>
+            <li><a href="#">Browse by Languages</a></li>
+        </ul>
+
+    </nav>
+    <nav class="right-navbar">
+        <ul class="secondary-nav-links">
+            <li><a href="#"><img class="search-icon" src="static/upload/search.svg"></a></li>
+            <li><a href="#"><img class="notification-icon" src="static/upload/bell.png"></a></li>
+            <li><a href="#"><img class="profile-picture" src="static/upload/profilepicture.jpg"></a></li>
+        </ul>
+    </nav>
+
+</div>
+
+
+
+
+
+
+<div class="content-bg">
+    <img class="content-img" src="/static/upload/background.webp">
+</div>
+
+
+<div class="content">    
+    <div class="content-mini">
+        <img src="/static/upload/content-header.webp" alt="" class="content-mini-img">
+        <h1>In this application, when you select a movie from the menu, we will recommend 5 other movies with similar content.</h1>
+
+
+
+        <form method="post">
+            <label for="dropdown">Choose a film:</label> 
+                <select id="dropdown" name="dropdown"> 
+                    <option value="">Select from list</option>
+                    <option value="The Prestige">The Prestige</option> 
+                    <option value="Titanic">Titanic</option> 
+                    <option value="American Beauty">American Beauty</option> 
+                    <option value="The Godfather">The Godfather</option> 
+                </select>
+                <div class="button">
+                    <input class="button" type="submit" value="Predict" method="POST">
+                    <input id="refreshButton" class="button" type="submit" value="Refresh" method="GET">
+                </div>
+        </form>
+               
+
+        
+        {% if recommended_movies %}
+
+        <div>1. {{ recommended_movies[0] }}</div>
+        <div>2. {{ recommended_movies[1] }}</div>
+        <div>3. {{ recommended_movies[2] }}</div>
+        <div>4. {{ recommended_movies[3] }}</div>
+        <div>5. {{ recommended_movies[4] }}</div>      
+        
+        
+        {% endif %}
+    
+        <script>
+   
+            document.getElementById("refreshButton").addEventListener("click", function() {
+                location.reload(); // Refresh the page
+            });
+        </script> 
+
+
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Movies</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/creature.png" alt="">
+            <img class="movies-img" src="/static/upload/lupin.png" alt="">
+            <img class="movies-img" src="/static/upload/houseofcards.png" alt="">
+            <img class="movies-img" src="/static/upload/ozark.png" alt="">
+            <img class="movies-img" src="/static/upload/elite.png" alt="">
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Continue Watching for Zafer</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201543.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201549.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201603.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201612.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201618.png" alt="">
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Trending Now</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201631.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201738.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201751.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201758.png" alt="">
+            <img class="movies-img" src="/static/upload/Ekran görüntüsü 2023-11-05 201808.png" alt="">
+
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Award-Winning TV Dramas</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/creature.png" alt="">
+            <img class="movies-img" src="/static/upload/lupin.png" alt="">
+            <img class="movies-img" src="/static/upload/houseofcards.png" alt="">
+            <img class="movies-img" src="/static/upload/ozark.png" alt="">
+            <img class="movies-img" src="/static/upload/elite.png" alt="">
+
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Only on Netlix</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/creature.png" alt="">
+            <img class="movies-img" src="/static/upload/lupin.png" alt="">
+            <img class="movies-img" src="/static/upload/houseofcards.png" alt="">
+            <img class="movies-img" src="/static/upload/ozark.png" alt="">
+            <img class="movies-img" src="/static/upload/elite.png" alt="">
+
+
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Familiar TV Favorites</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/creature.png" alt="">
+            <img class="movies-img" src="/static/upload/lupin.png" alt="">
+            <img class="movies-img" src="/static/upload/houseofcards.png" alt="">
+            <img class="movies-img" src="/static/upload/ozark.png" alt="">
+            <img class="movies-img" src="/static/upload/elite.png" alt="">
+
+
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>New Releases</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/creature.png" alt="">
+            <img class="movies-img" src="/static/upload/lupin.png" alt="">
+            <img class="movies-img" src="/static/upload/houseofcards.png" alt="">
+            <img class="movies-img" src="/static/upload/ozark.png" alt="">
+            <img class="movies-img" src="/static/upload/elite.png" alt="">
+
+
+        </div>
+    </div>
+
+    <div class="listeler media-container">
+        <div><h1>Award-Winning Directors</h1></div>
+        <div class="movies">
+            <img class="movies-img" src="/static/upload/creature.png" alt="">
+            <img class="movies-img" src="/static/upload/lupin.png" alt="">
+            <img class="movies-img" src="/static/upload/houseofcards.png" alt="">
+            <img class="movies-img" src="/static/upload/ozark.png" alt="">
+            <img class="movies-img" src="/static/upload/elite.png" alt="">
+  
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
