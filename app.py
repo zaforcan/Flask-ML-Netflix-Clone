@@ -38,6 +38,7 @@ def index():
         
     else: 
         return render_template("index.html")
+        print("hello world")
 
 
 if __name__ == '__main__':
